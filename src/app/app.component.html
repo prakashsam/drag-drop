@@ -1,0 +1,47 @@
+<div class="moveable app">
+    <div class="container">
+           <ngx-selecto
+            #selecto
+            dragContainer=".elements"
+            [selectableTargets]='[".selecto-area .cube"]'
+            [boundContainer] ="'.elements'"
+            [hitRate]='0'
+            [selectByClick]='true'
+            [selectFromInside]='false'
+            [toggleContinueSelect]='["shift"]'
+            [ratio]='0'
+            (dragStart)="onDragStart($event)"
+            (selectEnd)="onSelectEnd($event)"
+        ></ngx-selecto>
+        <ngx-moveable
+            #moveable
+            [draggable]='true'
+            [target]='targets'
+            [resizable]='false'
+    [keepRatio]='false'
+    [throttleResize]='0'
+    [renderDirections]='["nw","n","ne","w","e","sw","s","se"]'
+    [edge]='false'
+    [zoom]='1'
+    [origin]='true'
+    [padding]='{"left":0,"top":0,"right":0,"bottom":0}'
+    (resizeStart)="onResizeStart($event)"
+    (resize)="onResize($event)"
+            (clickGroup)="onClickGroup($event)"
+            (dragStart)="onMoveableDragStart($event)"
+            (drag)="onDrag($event)"
+            (dragGroupStart)="onDragGroupStart($event)"
+            (dragGroup)="onDragGroup($event)"
+            (dragEnd)="onDragEnd($event)"
+        ></ngx-moveable>
+        <div class="elements selecto-area" id="selecto1">
+            <ng-container *ngFor="let num of cubes; let i = index">
+                <div class="cube test{{i}}" >{{i}}</div>
+            </ng-container>
+          
+        </div>
+        <div class="empty elements" id="selecto2">
+
+        </div>
+    </div>
+</div>
