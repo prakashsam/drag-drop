@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~12.0.0",
     "@angular/platform-browser-dynamic": "~12.0.0",
     "@angular/router": "~12.0.0",
+    "angular2-draggable": "^2.3.2",
     "ngx-moveable": "^0.21.5",
     "ngx-selecto": "^1.11.1",
     "rxjs": "~6.6.0",
