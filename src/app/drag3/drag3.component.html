@@ -1,0 +1,13 @@
+<p>drag3 works!</p>
+<div class="dragContaoner" >
+    <ng-container *ngFor="let item of dragItem; let i = index;">
+        <div class="drag drag1" id="drag1" (dragover)="drag_over($event)" (drop)="drop($event)" id="1{{i}}">
+            <ng-container >
+            <div id="{{item.id}}" draggable="true" (dragstart)="drag_start($event)" class="dragitem"  ngResizable 
+            [rzHandles]="'se,sw,ne,nw'"  [rzAspectRatio]="true"> {{item.text}}</div> 
+                </ng-container>
+       
+        </div>
+    </ng-container>
+ 
+</div>

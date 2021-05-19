@@ -1,0 +1,32 @@
+<div class="moveable app">
+
+    <div class="container">
+
+        <div class="testtttt">
+            <ngx-selecto #selecto dragContainer=".testtttt" [selectableTargets]='[".testtttt .cube"]'
+                [boundContainer]='true' [hitRate]='0' [selectByClick]='true' [selectFromInside]='false'
+                [toggleContinueSelect]='["shift"]' [ratio]='0' (dragStart)="onDragStart($event)"
+                (selectEnd)="onSelectEnd($event)"></ngx-selecto>
+            <ngx-moveable #moveable [draggable]='true' [snappable]='true' [target]='targets' [resizable]='true'
+                [keepRatio]='true' [throttleResize]='0'
+                [renderDirections]='["nw","ne","sw","se"]' [edge]='false' [zoom]='1' [origin]='true'
+                [padding]='{"left":0,"top":0,"right":0,"bottom":0}' (resizeStart)="onResizeStart($event)"
+                (resize)="onResize($event)" (clickGroup)="onClickGroup($event)"
+                (dragStart)="onMoveableDragStart($event)" (drag)="onDrag($event)"
+                (dragGroupStart)="onDragGroupStart($event)" (dragGroup)="onDragGroup($event)"
+                (dragEnd)="onDragEnd($event)"></ngx-moveable>
+            <ng-container *ngFor="let page of pageList; let i = index">
+                <div class="elements selecto-area" id="{{page.id}}">
+                    <ng-container *ngFor="let item of dragItem; let i = index">
+                        <div class="cube test{{i}}" *ngIf="page.id == item.pageId" id="{{item.id}}">{{item.text}}</div>
+                    </ng-container>
+                </div>
+
+            </ng-container>
+
+
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

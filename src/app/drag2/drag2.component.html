@@ -1,0 +1,18 @@
+<div class="row">
+
+    <div class="col-sm-8">
+        <div class="drag-boundary top-b left-b" id="boundary" #myBounds [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }">
+            <div ngDraggable ngResizable [rzHandles]="'se,sw,ne,nw'" class="dragItem" [rzAspectRatio]="true"
+                (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" rzContainment="#boundary"
+                (started)="onDragBegin($event)" (stopped)="onDragEnd($event)" (movingOffset)="onMoving($event)"
+                (endOffset)="onMoveEnd($event)" [zIndex]="'9999'">Item 1 </div>
+
+            <div ngDraggable ngResizable [rzHandles]="'se,sw,ne,nw'" class="dragItem" [rzAspectRatio]="true"
+                (edge)="checkEdge($event)" [bounds]="myBounds" [inBounds]="inBounds" rzContainment="#boundary"
+                (started)="onDragBegin($event)" (stopped)="onDragEnd($event)" (movingOffset)="onMoving($event)"
+                (endOffset)="onMoveEnd($event)" [zIndex]="'9999'"> Item 2 </div>
+        </div>
+        <div class="drag-boundary top-b left-b" id="boundary1" #myBounds [ngClass]="{ 'top-b': !edge?.top, 'bottom-b': !edge?.bottom, 'left-b': !edge?.left, 'right-b': !edge?.right }"></div>
+
+    </div>
+</div>

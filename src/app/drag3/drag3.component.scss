@@ -1,0 +1,21 @@
+.dragContaoner{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background: black;
+    position: relative;
+}
+.drag{
+    width: 500px;
+    height: 280px;
+    background: blueviolet;
+    margin-bottom: 10px;
+}
+.dragitem{
+    width: 70px;
+    height: 70px;
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

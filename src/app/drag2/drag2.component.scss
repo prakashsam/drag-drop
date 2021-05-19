@@ -1,0 +1,15 @@
+.dragItem{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+}
+.drag-boundary{
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    background: black;
+    margin-bottom: 10px;
+}
+
